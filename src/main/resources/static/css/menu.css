@@ -1,0 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    width: 100%;
+    height: 1024px;
+    background-color: beige;
+
+}
+.top{
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    color: lightslategray;
+    background-color: blanchedalmond;
+    margin-left: 75px;
+}
+.login{
+    margin-right: 100px;
+    float: right;
+}
+.head{
+    width: 100%;
+    height: 121px;
+  /* margin-left: 30px; */
+}
+img{
+    position: absolute;
+    left: 80px;
+    top: 60px;
+}
+.search{
+    width: 422px;
+    height: 36px;
+    position: absolute;
+    right: 40px;
+    top: 50px;;
+    margin: 2px auto;
+    
+}
+.input{
+    height: 100%;
+    width: 342px;
+    color: blueviolet;
+}
+button{
+    background-color: dodgerblue;
+    font-size: 17px;
+    width: 78px;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    color: white;
+     float: right;
+}
+.head_2{
+    width: 1180px;
+    height: 40px;
+
+}
+.head00{
+    width: 220px;
+    height: 40px;
+    background-color: cornflowerblue;
+    color: white;
+    position: relative;
+    left: 42px;
+    top: 34px;
+    float: left;
+    font-size: 18px;
+    margin: 42px 40px;
+    text-align: center;
+
+}
+.head01{
+    width: 96px;
+    height: 40px;
+    font-size: 18px;
+    margin: 42px 40px;
+    float: left;
+    position: relative;
+    left: 60px;
+    top:30px;
+}
+.menu{
+    width: 100%;
+    height: 438px;
+    background-image: url("../img/new-high.jpg");
+    background-size:100% 100%;
+    position:absolute;
+}
+ul{
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    left: 80px;
+    list-style-type: none;
+}
+li{
+    width: 220px;
+    height: 24%;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 16px;
+    padding: 1px;
+    margin: 1px;
+    opacity: 0.8;
+    text-align: center;
+    line-height:70px;
+}
