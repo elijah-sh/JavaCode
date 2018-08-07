@@ -27,12 +27,47 @@ public class T3 {
         }
         System.out.println("list: "+list.toString());
         // list分组 存 map
-        for (int j = 0; j<5;j++){
-                List<Integer> listSub=new ArrayList<>();
-                for(int q=0; q<10; q++) {
-                    listSub.add(q,list.get(j*10+q));
+        List<Integer> listSub1=new ArrayList<>();
+        List<Integer> listSub2=new ArrayList<>();
+        List<Integer> listSub3=new ArrayList<>();
+        List<Integer> listSub4=new ArrayList<>();
+        List<Integer> listSub5=new ArrayList<>();
+        List<Integer> listSub6=new ArrayList<>();
+        List<Integer> listSub7=new ArrayList<>();
+        List<Integer> listSub8=new ArrayList<>();
+        List<Integer> listSub9=new ArrayList<>();
+        List<Integer> listSub0=new ArrayList<>();
+        for (int j = 0; j<50;j++){
+
+            String  s = String.valueOf(list.get(j)); // 把int转换成String
+           //
+            String  ss =   String.format("%02d", list.get(j));
+            int cc = Integer.parseInt(ss.substring(0,1));
+            System.out.print(cc+" ");
+                switch (cc){
+                    case 0 :  listSub0.add(list.get(j)) ; break;
+                    case 1 :  listSub1.add(list.get(j)); break;
+                    case 2 :  listSub2.add(list.get(j)); break;
+                    case 3 :  listSub3.add(list.get(j)); break;
+                    case 4 :  listSub4.add(list.get(j)); break;
+                    case 5 :  listSub5.add(list.get(j)); break;
+                    case 6 :  listSub6.add(list.get(j)); break;
+                    case 7 :  listSub7.add(list.get(j)); break;
+                    case 8 :  listSub8.add(list.get(j)); break;
+                    case 9 :  listSub9.add(list.get(j)); break;
+
                 }
-                map.put(j,listSub);
+
+                map.put(0,listSub0);
+                map.put(1,listSub1);
+                map.put(2,listSub2);
+                map.put(3,listSub3);
+                map.put(4,listSub4);
+                map.put(5,listSub5);
+                map.put(6,listSub6);
+                map.put(7,listSub7);
+                map.put(8,listSub8);
+                map.put(9,listSub9);
         }
         System.out.println("map: "+map.toString());
 
