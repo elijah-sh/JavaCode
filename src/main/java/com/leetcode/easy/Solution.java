@@ -1,8 +1,83 @@
 package com.leetcode.easy;
 
+import com.common.ListNode;
+
 import java.util.HashMap;
 
 public class Solution {
+
+
+    public static void main(String[] args) {
+        // [3,2,4]
+        //6
+        int[] nums = new int[]{3,2,4};
+        int target = 6;
+        int[] num = twoSum(nums, target);
+        //System.out.println(num);
+
+        //[1,8]
+        //[0]
+        ListNode l1 = new ListNode(2);
+        l1.next = new ListNode(4);
+        l1.next.next = new ListNode(3);
+
+        ListNode l2 = new ListNode(0);
+        //l2.next = new ListNode(6);
+        //l2.next.next = new ListNode(4);
+
+        addTwoNumbers(l1, l2);
+    }
+
+    /**
+     *
+     * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+     * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
+     * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头
+     * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+     * 输出：7 -> 0 -> 8
+     * 原因：342 + 465 = 807
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = l1, q = l2, curr = dummyHead;
+
+        int carry = 0;
+       // p + q
+        while (l1 != null || l2 != null) {
+
+            int m,n;
+            if (l1 == null) {
+                m = 0;
+            } else {
+                m = l1.val;
+            }
+            if (l2 == null) {
+                n = 0;
+            } else {
+                n = l2.val;
+            }
+            int sun = m + n + carry;
+            carry = sun / 10;
+            // 取余
+            curr.next = new ListNode(sun % 10);
+            curr = curr.next;
+
+            if(l1 != null) l1 = l1.next;
+            if(l2 != null) l2 = l2.next;
+        }
+
+        if (carry > 0) {
+            curr.next = new ListNode(carry);
+        }
+
+        System.out.println(dummyHead.toString());
+        return dummyHead;
+
+    }
 
     /**
      * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -36,7 +111,7 @@ public class Solution {
                 // 返回 与补数相匹配的值
                 indexs[0] = integerHashMap.get(nums[i]);
                 indexs[1] = i;
-                System.out.println(indexs[0] + " - " + indexs[1]);
+                //System.out.println(indexs[0] + " - " + indexs[1]);
                 return indexs;
             }
             // 将数据存入 key为补数 ，value为下标
@@ -45,12 +120,5 @@ public class Solution {
         return new int[-1];
     }
 
-    public static void main(String[] args) {
-        // [3,2,4]
-        //6
-        int[] nums = new int[]{3,2,4};
-        int target = 6;
-        int[] num = twoSum(nums, target);
-        System.out.println(num);
-    }
+
 }
