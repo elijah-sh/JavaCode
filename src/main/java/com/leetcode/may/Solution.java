@@ -2,10 +2,7 @@ package com.leetcode.may;
 
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  *
@@ -23,7 +20,89 @@ public class Solution {
         Solution solution = new Solution();
         // "pwwkew"
         String  s = "pwwkew";
-        lengthOfLongestSubstring(s);
+        int[] nums1 = new int[]{1, 2};
+        int[] nums2 = new int[]{3, 4};
+        double mid = solution.findMedianSortedArrays(nums1, nums2);
+        System.out.println(mid);
+    }
+
+    /**
+     * 给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
+     * 请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
+     * 你可以假设 nums1 和 nums2 不会同时为空。
+     *
+     * 示例 1:
+     * nums1 = [1, 3]  nums2 = [2]  则中位数是 2.0
+     * 示例 2:
+     * nums1 = [1, 2] nums2 = [3, 4] 则中位数是 (2 + 3)/2 = 2.5
+     *
+     * @来源： 力扣（LeetCode） 链接：https://leetcode-cn.com/problems/median-of-two-sorted-arrays
+     * @完成情况  完全参考答案
+     */
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+
+        int m = nums1.length;
+        int n = nums2.length;
+        int[] nums = new int[m + n];
+
+        // 1、其中一个元素是NULL
+        if (m == 0) {
+            // 取余之后为 奇数 直接返回中间数
+            if (n % 2 == 1) {
+                return nums2[n / 2];
+            } else {
+                return (nums2[n / 2 - 1] + nums2[n / 2]) / 2.0;
+            }
+        }
+        if (n == 0) {
+            // 取余之后为 奇数 直接返回中间数
+            if (m % 2 == 1) {
+                return nums1[m / 2];
+            } else {
+                return (nums1[m / 2 - 1] + nums1[m / 2]) / 2.0;
+            }
+        }
+
+        // 2、两个都有值
+
+        // 定义传入两个元素的指针，用于赋值
+        int i = 0;
+        int j = 0;
+        // 定义需要便利数据的最大值
+        int count = 0;
+        while (count != (m + n)) {
+
+            // 2、1 其中一个数据变遍历完了，直接把另外一个添加上 就跳出循环
+            if (i == m) {
+                while (j != n) {
+                    nums[count++] = nums2[j++];
+                }
+                break;
+            }
+            if (j == n) {
+                while (i != m) {
+                    nums[count++] = nums1[i++];
+                }
+                break;
+            }
+
+            // 2.2 比较两个元素的大小 选取小的赋值
+            if (nums1[i] < nums2[j]) {
+                nums[count++] = nums1[i++];
+            } else {
+                nums[count++] = nums2[j++];
+            }
+        }
+
+        for (int k = 0; k < count; k++) {
+            System.out.println(nums[k]);
+        }
+        // 3 找到合并之后的中位数
+        if (count % 2 == 1) {
+            return nums[count / 2];
+        } else {
+            return (nums[count / 2 - 1] + nums[count / 2]) / 2.0;
+        }
     }
 
     /**
