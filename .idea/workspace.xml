@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="951e4f0b-3d13-4ffd-ac2d-fc41d2e05002" name="Default" comment="【ADD】 添加两数相加算法">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/leetcode/may/Daily.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/temp.csv" afterDir="false" />
+    <list default="true" id="951e4f0b-3d13-4ffd-ac2d-fc41d2e05002" name="Default" comment="【ADD】 添加 287. 寻找重复数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/leetcode/may/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leetcode/may/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leetcode/may/Daily.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leetcode/may/Daily.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager" selected="Application.Daily">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -304,8 +302,8 @@
     <list>
       <item itemvalue="Application.Solution" />
       <item itemvalue="Application.Solution (1)" />
-      <item itemvalue="Spring Boot.JavacodeApplication" />
       <item itemvalue="Application.Daily" />
+      <item itemvalue="Spring Boot.JavacodeApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -349,7 +347,9 @@
       <workItem from="1589510070781" duration="2129000" />
       <workItem from="1589767225963" duration="579000" />
       <workItem from="1590368702074" duration="5113000" />
-      <workItem from="1590457069564" duration="975000" />
+      <workItem from="1590457069564" duration="1034000" />
+      <workItem from="1590543224220" duration="8933000" />
+      <workItem from="1590628818749" duration="1403000" />
     </task>
     <task id="LOCAL-00001" summary="【ADD】 添加两数之和算法">
       <created>1588642143794</created>
@@ -379,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590376346330</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="【ADD】 添加 287. 寻找重复数">
+      <created>1590458154523</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590458154523</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,21 +410,26 @@
     <MESSAGE value="【ADD】 添加两数相加算法" />
     <MESSAGE value="【ADD】 添加无重复字符的最长子串 难&#10;https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/" />
     <MESSAGE value="【ADD】 添加寻找两个正序数组的中位数" />
-    <option name="LAST_COMMIT_MESSAGE" value="【ADD】 添加寻找两个正序数组的中位数" />
+    <MESSAGE value="【ADD】 添加 287. 寻找重复数" />
+    <option name="LAST_COMMIT_MESSAGE" value="【ADD】 添加 287. 寻找重复数" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="461" y="293" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1590548009823">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="461" y="293" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1440.900@0.0.1440.900" timestamp="1590548009823" />
     <state x="460" y="158" key="#com.intellij.ide.util.MemberChooser" timestamp="1588646002105">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="460" y="158" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1588646002105" />
-    <state x="828" y="251" key="#xdebugger.evaluate" timestamp="1590375269080">
+    <state x="828" y="251" key="#xdebugger.evaluate" timestamp="1590569403222">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="828" y="251" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1590375269080" />
-    <state x="287" y="52" key="CommitChangelistDialog2" timestamp="1590376346061">
+    <state x="828" y="251" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1590569403222" />
+    <state x="287" y="52" key="CommitChangelistDialog2" timestamp="1590458154264">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="287" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1590376346061" />
+    <state x="287" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1590458154264" />
     <state width="453" height="466" key="DebuggerActiveHint" timestamp="1590375261746">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -430,66 +442,77 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="GrepConsoleSettings/0.0.1440.900@0.0.1440.900" timestamp="1588765879642" />
-    <state width="1398" height="303" key="GridCell.Tab.0.bottom" timestamp="1590457559242">
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom" timestamp="1590632559886">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590457559242" />
+    <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590632559886" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1589340941967" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590374894376" />
-    <state width="1398" height="303" key="GridCell.Tab.0.center" timestamp="1590457559240">
+    <state width="1398" height="303" key="GridCell.Tab.0.center" timestamp="1590632559884">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590457559240" />
+    <state width="1398" height="303" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1590632559884" />
     <state width="1398" height="303" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1589340941965" />
     <state width="1398" height="303" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1590374894375" />
-    <state width="1398" height="303" key="GridCell.Tab.0.left" timestamp="1590457559240">
+    <state width="1398" height="303" key="GridCell.Tab.0.left" timestamp="1590632559883">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590457559240" />
+    <state width="1398" height="303" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1590632559883" />
     <state width="1398" height="303" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1589340941965" />
     <state width="1398" height="303" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1590374894374" />
-    <state width="1398" height="303" key="GridCell.Tab.0.right" timestamp="1590457559241">
+    <state width="1398" height="303" key="GridCell.Tab.0.right" timestamp="1590632559885">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590457559241" />
+    <state width="1398" height="303" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1590632559885" />
     <state width="1398" height="303" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1589340941966" />
     <state width="1398" height="303" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1590374894375" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1590457559015">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1590632556680">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590457559015" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1590632556680" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.23.1440.808@0.23.1440.808" timestamp="1590375040590" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1590457559014">
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1590632556679">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1590457559014" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1590632556679" />
     <state width="1398" height="303" key="GridCell.Tab.1.center/0.23.1440.808@0.23.1440.808" timestamp="1590375040589" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1590457559013">
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1590632556678">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1590457559013" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1590632556678" />
     <state width="1398" height="303" key="GridCell.Tab.1.left/0.23.1440.808@0.23.1440.808" timestamp="1590375040588" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1590457559014">
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1590632556679">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1590457559014" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1590632556679" />
     <state width="1398" height="303" key="GridCell.Tab.1.right/0.23.1440.808@0.23.1440.808" timestamp="1590375040589" />
     <state x="308" y="192" key="IDE.errors.dialog" timestamp="1588765888048">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="308" y="192" key="IDE.errors.dialog/0.0.1440.900@0.0.1440.900" timestamp="1588765888048" />
-    <state x="221" y="89" key="SettingsEditor" timestamp="1589334277006">
+    <state x="221" y="89" key="SettingsEditor" timestamp="1590632584769">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1589334277006" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1589248593512">
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1590632584769" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1590654952443">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1589248593512" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1590654952443" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1590373260234">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1590373260234" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/leetcode/may/Daily.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
