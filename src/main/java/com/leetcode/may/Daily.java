@@ -1,8 +1,7 @@
 package com.leetcode.may;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Daily {
     public static void main(String[] args) {
@@ -10,8 +9,48 @@ public class Daily {
         int[] nums = new int[]{3,1,3,4,2};
         int[] A = new int[]{4,5,0,-2,-3,1};
         int K = 3;
-        int dup = daily.subarraysDivByKAN2(A, K);
+        int[] candies = new int[]{12,1,12};
+        int extraCandies = 10;
+        List<Boolean> dup = daily.kidsWithCandies(candies, extraCandies);
         System.out.println(dup);
+    }
+
+    /**
+     * 拥有最多糖果的孩子
+     *
+     *  给你一个数组 candies 和一个整数 extraCandies ，其中 candies[i] 代表第 i 个孩子拥有的糖果数目。
+     * 对每一个孩子，检查是否存在一种方案，将额外的 extraCandies 个糖果分配给孩子们之后，此孩子有 最多 的糖果。注意，允许有多个孩子同时拥有 最多 的糖果数目。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/kids-with-the-greatest-number-of-candies
+     *
+     * 2 <= candies.length <= 100
+     * 1 <= candies[i] <= 100
+     * 1 <= extraCandies <= 50
+     */
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> an = new ArrayList<>(candies.length);
+        int max = 0;
+        //int m = Arrays.stream(candies).sorted().max().orElse(0);
+        //Arrays.stream(candies).boxed().map(n -> n + extraCandies > m).collect(Collectors.toList());
+        for (int candie : candies) {
+            // 找到最大  最大的值与extraCandies的差值 与其他比较  大于为false 小于为true
+            if (candie > max) {
+                max = candie;
+            }
+
+        }
+
+        for (int candie : candies) {
+            // 找到最大  最大的值与extraCandies的差值 与其他比较  大于为false 小于为true
+            if (candie >= max - extraCandies) {
+                an.add(true);
+            } else {
+                an.add(false);
+            }
+        }
+
+        return an;
     }
 
     /**
