@@ -11,8 +11,36 @@ public class Daily {
         int K = 3;
         int[] candies = new int[]{12,1,12};
         int extraCandies = 10;
-        List<Boolean> dup = daily.kidsWithCandies(candies, extraCandies);
-        System.out.println(dup);
+       // List<Boolean> dup = daily.kidsWithCandies(candies, extraCandies);
+        System.out.println(daily.sumNums(9));
+    }
+
+    /**
+     * 求1+2+…+n
+     * 要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+     *
+     *  示例 1：
+     * 输入: n = 3
+     * 输出: 6
+     *  示例 2：
+     * 输入: n = 9
+     * 输出: 45
+     */
+    public int sumNums(int n) {
+
+        // 1、等差数列         return (int) (Math.pow(n, 2) + n) >> 1;
+        // 2、递归
+        // 2、 高斯定理
+
+
+        //int sum = n;
+        //Boolean f = n > 0 && (sum += sumNums(n - 1)) > 0;
+        //
+        //return sum;
+
+        // << 移动一次就是*2  两次  * 4
+        System.out.println((Math.pow(n, 2) + n));
+        return (int) (Math.pow(n, 2) + n) >> 1;
     }
 
     /**
