@@ -3,20 +3,21 @@ package com.fssc;
 import com.common.BaseDto;
 import com.common.Cat;
 import com.common.Person;
-import jdk.nashorn.internal.objects.annotations.Getter;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-
 public class Claim  extends BaseDto {
-    private Long id;
-    private String name;
-    private BigDecimal amount;
-    private Date table;
 
-    private Cat cat;
+     private String cd = "1";
+
+     private Long id;
+
+     private String name;
+     private BigDecimal amount;
+     private Date table;
+
+     private Cat cat;
 
     private List<Person> peoples;
 

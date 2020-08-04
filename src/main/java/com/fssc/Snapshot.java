@@ -7,10 +7,6 @@ import java.util.Date;
 
 /**
  * 单据快照表 拒绝时存值
- *
- * @author shuaihu.shen@hand-china.com
- * @version 1.0
- * @date 2020/6/16 4:57 下午
  */
 public class Snapshot extends BaseDto {
 

@@ -1,5 +1,11 @@
 package com.common;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.annotation.Generated;
+
+@Generated("PERSON_TABLE")
+@Length(max = 777)
 public class Person extends BaseDto {
     int age;
     String name;

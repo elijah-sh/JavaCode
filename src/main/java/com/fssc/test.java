@@ -5,8 +5,11 @@ import com.common.Cat;
 import com.common.Person;
 import com.sun.tools.javac.util.ArrayUtils;
 import com.util.DtoRefUtil;
+import org.hibernate.validator.constraints.Length;
 
+import javax.annotation.Generated;
 import java.beans.PropertyDescriptor;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -47,6 +50,9 @@ public class test {
                 Object value = getFieldValueByName(name, object);
                 //System.out.println("key=" + name);
                 System.out.println(name + " ： " + value);
+
+
+
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -202,6 +208,18 @@ public class test {
         for (Field field : fields) {
             fieldNamStrings[i++] = field.getName();
             // 判断类型  是 集合还是什么 继承了 baseDto？
+
+            // 查看列的注释 只遍历数据库字段
+            Annotation[] annotations = field.getDeclaredAnnotations();
+            Annotation[] annotations1 = field.getAnnotations();
+
+            Generated annotation = field.getAnnotation(Generated.class);
+            Length length = field.getAnnotation(Length.class);
+
+            if (length != null) {
+                System.out.println(length + " " + field.getName());
+
+            }
         }
         return fieldNamStrings;
     }

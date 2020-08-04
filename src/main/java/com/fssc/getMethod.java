@@ -16,7 +16,10 @@ import java.util.*;
 import static com.util.DtoRefUtil.fmtDate;
 import static com.util.DtoRefUtil.parGetName;
 
-public class SaveFiled {
+/**
+ * 获取类方法
+ */
+public class getMethod {
 
 
 
@@ -24,45 +27,42 @@ public class SaveFiled {
         ClaimTmpl tmpl = new ClaimTmpl();
         Claim claim = new Claim();
         // 新建Person对象，
-        List<Person> peoples = new ArrayList<>();
-        Person p1 = new Person("eee", 100);
-        Person p2 = new Person("e2e", 170);
-        Person p3 = new Person("aaa", 200);
-        peoples.add(p1);
-        peoples.add(p2);
-        peoples.add(p3);
-        claim.setId((long) 10001);
-        claim.setTable(new Date());
-        claim.setPeoples(peoples);
-        claim.setName("payApply");
-        claim.setAmount(new BigDecimal(7.77));
-        Cat cat = new Cat("lala");
-        claim.setCat(cat);
-        List<Snapshot> list = new ArrayList<>();
-        Snapshot ss = new Snapshot();
-        ss.setRegionCode("claim");
 
-        List<Cat> cats = new ArrayList<>();
-        Cat cat2 = new Cat("DoDo");
-        Cat cat3 = new Cat("SOl");
-        Cat cat4 = new Cat("RE");
-        cats.add(cat2);
-        cats.add(cat3);
-        cats.add(cat4);
-        tmpl.setClaim(claim);
-        tmpl.setCats(cats);
-        peoples.add(p3);
-        tmpl.setId((long) 10001);
-        tmpl.setName("prePAL");
-
-        getFiled(tmpl, list, ss);
-        System.out.println(list.size());
-        System.out.println(list);
-
+        //getFiled(tmpl, list, ss);
+        getFiledValue("com.fssc.ClaimTmpl");
         Map<String, String> map = DtoRefUtil.getFieldValueMap(tmpl);
 
         System.out.println(map.toString());
     }
+
+    public static List<String> getFiledValue(String classPath) {
+        Class cls  = null;
+        try {
+            cls  = Class.forName(classPath);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<String> data = new ArrayList<>();
+
+        Method[] methods = cls.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println(method.getName());
+
+            data.add(method.getName());
+        }
+
+        Field[] fields = cls.getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println(field.getName());
+            data.add(field.getName());
+        }
+
+        return data;
+
+    }
+
+
 
     public static void getFiled(Object object, List<Snapshot> list, Snapshot ss) {
 
