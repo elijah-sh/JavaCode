@@ -18,7 +18,7 @@ import static java.lang.Math.max;
 public class DynamicProgramming {
 
     public static void main(String[] args) {
-        DynamicProgramming dp = new DynamicProgramming();
+        //DynamicProgramming dp = new DynamicProgramming();
         //int[][] grid = {{1,2,1},{1,5,1},{4,2,1}};
         //int[][] grid = {{1,2,4},{3,1,2},{1,5,1}};
         //int minPathSum = dp.climbStairs(4);
@@ -58,10 +58,10 @@ public class DynamicProgramming {
         //System.out.println(maxProfit);
 
         // Your NumArray object will be instantiated and called as such:
-        //int[] nums = {-2, 0, 3, -5, 2, -1};
-        //DynamicProgramming obj = new DynamicProgramming(nums);
-        //int param_1 = obj.sumRange(2,5);
-        //System.out.println(param_1);
+        int[] nums = {-2, 0, 3, -5, 2, -1};
+        DynamicProgramming obj = new DynamicProgramming(nums);
+        int param_1 = obj.sumRange(0,5);
+        System.out.println(param_1);
 
     }
 
@@ -443,15 +443,27 @@ public class DynamicProgramming {
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/range-sum-query-immutable
      */
-
-    //public DynamicProgramming(int[] nums) {
-    //    int[] num = {-2, 0, 3, -5, 2, -1};
-    //}
+    int[] sum;
+    public DynamicProgramming(int[] nums) {
+        if (nums.length == 0) {
+            return;
+        }
+        // 长度 + 1 为了防止空指针
+        sum = new int[nums.length];
+        sum[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            // 前n项和
+            sum[i] = sum[i-1] + nums[i];
+            System.out.println(i+1 + " --> " + sum[i]);
+        }
+    }
 
     public int sumRange(int i, int j) {
-
-
-        return 0;
+        if (i == 0) {
+            return sum[j];
+        }
+        // 取差值
+        return sum[j] - sum[i-1];
     }
 
 }
