@@ -2,6 +2,9 @@ package com.leetcode.algorithm;
 
 import javax.validation.constraints.Max;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.lang.Math.max;
 
@@ -24,9 +27,42 @@ public class DynamicProgramming {
         //int[] product = {-2, 3, -4};
         //int maxProduct = dp.maxProduct(product);
         //System.out.println(maxProduct);
-        int nums[] = {1,2,3,1};
-        int rob = dp.rob(nums);
-        System.out.println(rob);
+        //int nums[] = {1,2,3,1};
+        //int rob = dp.rob(nums);
+        //System.out.println(rob);
+
+        //Map<String, String> rejectMap = new HashMap<>();
+        //Map<String, String> submitMap = new HashMap<>();
+        //rejectMap.put("aa", "aaa");
+        //rejectMap.put("bb", "bbb");
+        //submitMap.put("aa", "aaa");
+        //submitMap.put("bb", "aaa");
+        //submitMap.put("cc", "aaa");
+        //rejectMap.remove("dd");
+        //if (rejectMap.size() > submitMap.size()) {
+        //    rejectMap.keySet().removeAll(submitMap.entrySet());
+        //    System.out.println(rejectMap.keySet());
+        //} else {
+        //
+        //    for (Map.Entry<String, String> entry : rejectMap.entrySet()) {
+        //        submitMap.remove(entry.getKey());
+        //    }
+        //    System.out.println(submitMap.keySet());
+        //}
+        //int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        //int[] nums = {1,2};
+        //int maxSubArray = dp.maxSubArray(nums);
+        //System.out.println(maxSubArray);
+        //int[] profit = {7,1,5,3,6,4};
+        //int maxProfit = dp.maxProfit(profit);
+        //System.out.println(maxProfit);
+
+        // Your NumArray object will be instantiated and called as such:
+        //int[] nums = {-2, 0, 3, -5, 2, -1};
+        //DynamicProgramming obj = new DynamicProgramming(nums);
+        //int param_1 = obj.sumRange(2,5);
+        //System.out.println(param_1);
+
     }
 
 
@@ -303,6 +339,119 @@ public class DynamicProgramming {
             System.out.println(i + " --> " + dp[i] );
         }
         return dp[nums.length];
+    }
+
+
+    /**
+     * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+     *
+     * 示例:
+     *
+     * 输入: [-2,1,-3,4,-1,2,1,-5,4]
+     * 输出: 6
+     * 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/maximum-subarray
+     */
+    public int maxSubArray(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        int res = nums[0];
+
+        if (nums[0] > 0) {
+            sum = nums[0];
+        }
+        for (int i = 1; i < nums.length; i++) {
+            // 只有大于0，累加才有意义
+            if (sum > 0)
+                sum += nums[i];
+            else
+                sum = nums[i];
+            res = Math.max(res, sum);
+           // System.out.println(i + " --> " + res );
+        }
+        return res;
+    }
+
+
+    /**
+     * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+     *
+     * 如果你最多只允许完成一笔交易（即买入和卖出一支股票一次），设计一个算法来计算你所能获取的最大利润。
+     *
+     * 注意：你不能在买入股票前卖出股票。
+     *
+     *  
+     *
+     * 示例 1:
+     *
+     * 输入: [7,1,5,3,6,4]
+     * 输出: 5
+     * 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     *      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。
+     * 示例 2:
+     *
+     * 输入: [7,6,4,3,1]
+     * 输出: 0
+     * 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
+     */
+    public int maxProfit(int[] prices) {
+
+        // 最小的与最大的
+        int[] dp = new int[prices.length];
+        int[] dpPrices = new int[prices.length];
+        if (prices.length == 0) {
+            return 0;
+        }
+        // 默认值
+        dp[0] = prices[0];
+        dpPrices[0] = 0;
+
+        // 动态规划 前i天的最大收益 = max{前i-1天的最大收益，第i天的价格-前i-1天中的最小价格}
+        for (int i = 1; i < prices.length; i++) {
+            // 买入最小
+            dp[i] = Math.min(prices[i], dp[i - 1]);
+            // 利润最大
+            dpPrices[i] = Math.max(prices[i] - dp[i-1], dpPrices[i - 1]);
+            System.out.println(i + " --> " + dpPrices[i]);
+        }
+        return dpPrices[prices.length-1];
+    }
+
+
+    /**
+     * 给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。
+     *
+     * 示例：
+     *
+     * 给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()
+     *
+     * sumRange(0, 2) -> 1
+     * sumRange(2, 5) -> -1
+     * sumRange(0, 5) -> -3
+     * 说明:
+     *
+     * 你可以假设数组不可变。
+     * 会多次调用 sumRange 方法。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/range-sum-query-immutable
+     */
+
+    //public DynamicProgramming(int[] nums) {
+    //    int[] num = {-2, 0, 3, -5, 2, -1};
+    //}
+
+    public int sumRange(int i, int j) {
+
+
+        return 0;
     }
 
 }
