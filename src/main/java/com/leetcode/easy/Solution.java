@@ -26,6 +26,9 @@ public class Solution {
         //l2.next.next = new ListNode(4);
 
         addTwoNumbers(l1, l2);
+
+        boolean a = isPalindrome(123321);
+        System.out.println(a);
     }
 
     /**
@@ -120,5 +123,79 @@ public class Solution {
         return new int[-1];
     }
 
+    /**
+     * 7. 整数反转
+     *
+     * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
+     *
+     * 示例 1:
+     *
+     * 输入: 123
+     * 输出: 321
+     *  示例 2:
+     *
+     * 输入: -123
+     * 输出: -321
+     * 示例 3:
+     *
+     * 输入: 120
+     * 输出: 21
+     *
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/reverse-integer
+     *
+     * x 除10 取 余 既作为最大的n
+     * x除10 循环
+     *
+     */
+    public static int reverse(int x) {
+
+        long n = 0;
+        while (x != 0) {
+            n = n * 10 + x % 10;
+            x = x / 10;
+        }
+        return (int) n == n ? (int) n : 0 ;
+    }
+
+
+    /**
+     *
+     *
+     *  判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+     *
+     * 示例 1:
+     *
+     * 输入: 121
+     * 输出: true
+     * 示例 2:
+     *
+     * 输入: -121
+     * 输出: false
+     * 解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+     * 示例 3:
+     *
+     * 输入: 10
+     * 输出: false
+     * 解释: 从右向左读, 为 01 。因此它不是一个回文数。
+     * 进阶:
+     * 你能不将整数转为字符串来解决这个问题吗？
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/palindrome-number
+     */
+    public static boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+        long n = 0;
+        long xx = x;
+        while (x != 0) {
+            n = n * 10 + x % 10;
+            x = x / 10;
+        }
+        return xx == n;
+    }
 
 }
