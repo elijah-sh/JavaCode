@@ -5,14 +5,11 @@
  */
 package com.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class StringPattenUtil {
-    private static Logger logger = LoggerFactory.getLogger(StringPattenUtil.class);
 
     /**
      * 功能描述: 去掉中括号,花括号、英文括号，中文括号及相关括号里面的内容,然后再去掉特殊字符

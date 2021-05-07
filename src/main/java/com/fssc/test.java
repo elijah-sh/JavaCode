@@ -5,7 +5,6 @@ import com.common.Cat;
 import com.common.Person;
 import com.sun.tools.javac.util.ArrayUtils;
 import com.util.DtoRefUtil;
-import org.hibernate.validator.constraints.Length;
 
 import javax.annotation.Generated;
 import java.beans.PropertyDescriptor;
@@ -214,12 +213,12 @@ public class test {
             Annotation[] annotations1 = field.getAnnotations();
 
             Generated annotation = field.getAnnotation(Generated.class);
-            Length length = field.getAnnotation(Length.class);
-
-            if (length != null) {
-                System.out.println(length + " " + field.getName());
-
-            }
+            //Length length = field.getAnnotation(Length.class);
+            //
+            //if (length != null) {
+            //    System.out.println(length + " " + field.getName());
+            //
+            //}
         }
         return fieldNamStrings;
     }

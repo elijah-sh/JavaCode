@@ -4,7 +4,6 @@ import com.common.BaseDto;
 import com.common.Cat;
 import com.common.Person;
 import com.util.DtoRefUtil;
-import org.springframework.util.StringUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -93,9 +92,9 @@ public class SaveFiled {
                 Snapshot snapshot = new Snapshot();
                 snapshot.setComponentCode(field.getName());
                 snapshot.setComponentValue(String.valueOf(value));
-                if (!StringUtils.isEmpty(ss.getRegionCode())) {
-                    snapshot.setRegionCode(ss.getRegionCode());
-                }
+                //if (!StringUtils.isEmpty(ss.getRegionCode())) {
+                //    snapshot.setRegionCode(ss.getRegionCode());
+                //}
                 if (ss.getRegionLineId() != null) {
                     snapshot.setRegionLineId(ss.getRegionLineId());
                 }

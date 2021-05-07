@@ -1,15 +1,8 @@
 package com.fssc;
 
-
-import com.common.BaseDto;
-
 import java.util.Date;
 
-/**
- * 单据快照表 拒绝时存值
- */
-public class Snapshot extends BaseDto {
-
+public class Snapshot {
     private Long snapshotId;
 
     /**

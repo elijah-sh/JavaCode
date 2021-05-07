@@ -6,9 +6,6 @@
 package com.util;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -23,7 +20,7 @@ import java.util.Map;
  */
 public final class DtoRefUtil {
 
-    private static Logger logger = LoggerFactory.getLogger(DtoRefUtil.class);
+    //private static Logger logger = LoggerFactory.getLogger(DtoRefUtil.class);
     private static final char COLON = ':';
     private static final char UNDERLINE = '_';
     private static final int THREE = 3;
@@ -61,7 +58,7 @@ public final class DtoRefUtil {
                 }
                 valueMap.put(field.getName(), result);
             } catch (Exception e) {
-                logger.error(e.getMessage());
+                //logger.error(e.getMessage());
                 continue;
             }
         }
@@ -111,11 +108,11 @@ public final class DtoRefUtil {
                         Boolean temp = Boolean.parseBoolean(value);
                         fieldSetMet.invoke(bean, temp);
                     } else {
-                        logger.debug("not supper type" + fieldType);
+                        //logger.debug("not supper type" + fieldType);
                     }
                 }
             } catch (Exception e) {
-                logger.error(e.getMessage());
+                //logger.error(e.getMessage());
                 continue;
             }
         }
@@ -141,7 +138,7 @@ public final class DtoRefUtil {
             SimpleDateFormat sdf = new SimpleDateFormat(fmtstr, Locale.UK);
             return sdf.parse(datestr);
         } catch (Exception e) {
-            logger.error(e.getMessage());
+            //logger.error(e.getMessage());
             return null;
         }
     }
@@ -161,7 +158,7 @@ public final class DtoRefUtil {
                     Locale.US);
             return sdf.format(date);
         } catch (Exception e) {
-            logger.error(e.getMessage());
+            //logger.error(e.getMessage());
             return null;
         }
     }
@@ -244,9 +241,9 @@ public final class DtoRefUtil {
      */
     public static String parKeyName(String fieldName) {
         String fieldGetName = parGetName(fieldName);
-        if (!StringUtils.isEmpty(fieldGetName) && fieldGetName.length() > THREE) {
-            return fieldGetName.substring(THREE);
-        }
+        //if (!StringUtils.isEmpty(fieldGetName) && fieldGetName.length() > THREE) {
+        //    return fieldGetName.substring(THREE);
+        //}
         return fieldGetName;
     }
 
