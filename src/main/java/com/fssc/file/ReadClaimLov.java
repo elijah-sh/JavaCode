@@ -23,7 +23,7 @@ public class ReadClaimLov {
     private static Logger logger = LoggerFactory.getLogger(ReadClaimLov.class);
 
 
-    public final static String fileClmTempPath = "/Users/shenshuaihu/IdeaProjects/fssc/fssc-parent/fssc-erbp/fssc-erbp-core/src/main/webapp/WEB-INF/view/clms/template/";
+    public final static String fileClmTempPath = "/Users/xxx/src/main/webapp/WEB-INF/view/xx/template/";
 
     public static void main(String[] args) {
         ReadClaimLov read = new ReadClaimLov();
@@ -682,7 +682,7 @@ public class ReadClaimLov {
                     macroList.add(at);
                 }
 
-                // 在一行中 <#include "../module/cmf_clm_invoice_summary_line.html"/>
+                // 在一行中 <#include "../module/zzz_invoice_summary_line.html"/>
                 if (lines.get(i).contains("<#include") && lines.get(i).contains("/>")) {
                     // 解析数据
                     String[] s = lines.get(i).split("\"");
@@ -706,7 +706,7 @@ public class ReadClaimLov {
                 }
 
                 // 读取之后批量带有@ 内容
-                //<#macro cmfClmClaimPayFlow>
+                //<#macro cmfClmxxxPayFlow>
                 String macro = "";
                 for (String l : line) {
                     if (l.contains("<#macro") && l.contains(">")) {
